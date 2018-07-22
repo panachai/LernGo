@@ -1,4 +1,5 @@
 # LernGo
 
 ## Helpers for Dev
-- realize start --generate --fmt --install --build --run //เมือน  nodemon
+- realize start --fmt --name="main" --build --run
+//เมือน  nodemon (พิมครบเฉพาะครั้งแรก ครั้งต่อไปใช้ realize)

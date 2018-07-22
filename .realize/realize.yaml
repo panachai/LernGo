@@ -2,16 +2,22 @@ settings:
   legacy:
     force: false
     interval: 0s
+  # resources:
+  #   outputs: outputs.log
+  #   logs: logs.log
+  #   errors: errors.log
 schema:
 - name: LernGo
   path: B:\Personal\LernGo
-  args:
-  - main.go
   commands:
+    # vet:
+    #   status: true
     fmt:
       status: true
-    # build:
-    #   status: true
+    # generate:
+    #     status: true
+    build:
+      status: true
     run:
       status: true
   watcher:
