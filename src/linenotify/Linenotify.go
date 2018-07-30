@@ -1,4 +1,4 @@
-package main
+package linenotify
 
 // func main() {
 // token := "" // EDIT THIS

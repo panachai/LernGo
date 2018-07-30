@@ -4,7 +4,7 @@ settings:
     interval: 0s
 schema:
 - name: LernGo
-  path: B:\Personal\LernGo
+  path: B:\Gocode\LernGo
   args:
   - main.go
   commands:
