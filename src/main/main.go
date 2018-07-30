@@ -1,10 +1,8 @@
 package main
 
 import (
-	"encoding/json"
 	"fmt"
 	"io/ioutil"
-	"log"
 	"net/http"
 	"os"
 )
@@ -36,13 +34,9 @@ func main() {
 	// c := linenotify.New()
 	// c.Notify(token, "ทดสอบ Realize on Golang 8", "", "", nil)
 
-	GetBxData()
+	// GetBxData()
 	// CallnormalWay()
 }
-
-// func toJson(){
-// 	jsonString, err := json.Marshal(datas)
-// }
 
 func CallnormalWay() {
 	urlTest := "https://bx.in.th/api/"
@@ -61,37 +55,38 @@ func CallnormalWay() {
 	}
 }
 
-func GetBxData() {
-	url := "https://bx.in.th/api/"
+//================= เกือบได้ละ ไว้ก่อน
+// func GetBxData() {
+// 	url := "https://bx.in.th/api/"
 
-	response, err := http.Get(url)
-	if err != nil {
-		fmt.Printf("%s", err)
-		os.Exit(1)
-	}
+// 	response, err := http.Get(url)
+// 	if err != nil {
+// 		fmt.Printf("%s", err)
+// 		os.Exit(1)
+// 	}
 
-	data, err := ioutil.ReadAll(response.Body)
-	if err != nil {
-		fmt.Printf("%s", err)
-		os.Exit(1)
-	}
+// 	data, err := ioutil.ReadAll(response.Body)
+// 	if err != nil {
+// 		fmt.Printf("%s", err)
+// 		os.Exit(1)
+// 	}
 
-	// fmt.Println(string(data))
+// 	// fmt.Println(string(data))
 
-	var bx BxModel
+// 	var bx BxModel
 
-	err := json.Unmarshal(data, &bx)
-	// defer resp.Body.Close()
+// 	err := json.Unmarshal(data, &bx)
+// 	// defer resp.Body.Close()
 
-	var record BxModel
+// 	var record BxModel
 
-	if err := json.NewDecoder(response.Body).Decode(&record); err != nil {
-		log.Println(err)
-	}
+// 	if err := json.NewDecoder(response.Body).Decode(&record); err != nil {
+// 		log.Println(err)
+// 	}
 
-	fmt.Println("Phone No. = ", record.PairingID)
-	fmt.Println("Country   = ", record.PrimaryCurrency)
-	fmt.Println("Location  = ", record.SecondaryCurrency)
-	fmt.Println("Carrier   = ", record.Change)
-	fmt.Println("LineType  = ", record.LastPrice)
-}
+// 	fmt.Println("Phone No. = ", record.PairingID)
+// 	fmt.Println("Country   = ", record.PrimaryCurrency)
+// 	fmt.Println("Location  = ", record.SecondaryCurrency)
+// 	fmt.Println("Carrier   = ", record.Change)
+// 	fmt.Println("LineType  = ", record.LastPrice)
+// }
